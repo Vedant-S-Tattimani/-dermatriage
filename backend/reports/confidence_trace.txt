@@ -1,0 +1,29 @@
+============================================================
+PHASE 1: FULL END-TO-END CONFIDENCE TRACE
+============================================================
+Image: 003ec5e0-cfec-4f63-85ad-ad694dc3d8ce.jpg
+
+Raw logits:                  [-1.5639974  -2.3620985   1.531519   -0.06012475  3.4593909   1.2496397
+ -1.1111615 ]
+Softmax probs (T=1.0):       [0.00504499 0.00227117 0.11148754 0.02269782 0.7664616  0.08410227
+ 0.00793459]
+Calibrated probs (T=0.8):    [1.6008682e-03 5.9032609e-04 7.6703034e-02 1.0489628e-02 8.5387170e-01
+ 5.3924896e-02 2.8195884e-03]
+
+Top-3 predictions:
+  1. melanoma     85.4%
+  2. bkl          7.7%
+  3. nevus        5.4%
+
+Predicted class:             melanoma
+Raw confidence (T=1.0):      0.7665 (76.6%)
+Confidence after cal (T=0.8): 0.8539 (85.4%)
+Entropy:                     0.5684
+OOD threshold check:         entropy <= 1.85 -> CLEAR
+Overconfidence cap:          0.98
+Final confidence (API):      0.8539 (85.4%)
+Frontend rendering:          (confidence * 100).toFixed(0) -> 85%
+
+NOTE: No entropy penalty SUBTRACTS from confidence.
+NOTE: No OOD penalty SUBTRACTS from confidence.
+NOTE: The only modification is Temperature Scaling and a soft cap at 98%.

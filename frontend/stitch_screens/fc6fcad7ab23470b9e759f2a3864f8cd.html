@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MedTriage AI - Analysis in Progress</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "tertiary": "#793100",
+                  "inverse-primary": "#a9c7ff",
+                  "error-container": "#ffdad6",
+                  "secondary-container": "#dce0e4",
+                  "primary-fixed-dim": "#a9c7ff",
+                  "surface-tint": "#005db6",
+                  "on-surface-variant": "#424752",
+                  "on-primary": "#ffffff",
+                  "surface": "#f9f9ff",
+                  "outline": "#727783",
+                  "on-primary-fixed": "#001b3d",
+                  "on-error": "#ffffff",
+                  "on-primary-container": "#c8daff",
+                  "background": "#f9f9ff",
+                  "on-primary-fixed-variant": "#00468c",
+                  "primary-container": "#005eb8",
+                  "on-tertiary-fixed-variant": "#793100",
+                  "on-tertiary": "#ffffff",
+                  "on-secondary": "#ffffff",
+                  "on-secondary-fixed-variant": "#43474b",
+                  "secondary-fixed-dim": "#c3c7cb",
+                  "inverse-surface": "#2e3037",
+                  "on-background": "#191c21",
+                  "error": "#ba1a1a",
+                  "on-tertiary-container": "#ffcfb9",
+                  "on-secondary-container": "#5e6367",
+                  "surface-bright": "#f9f9ff",
+                  "surface-container-lowest": "#ffffff",
+                  "primary-fixed": "#d6e3ff",
+                  "surface-container-high": "#e7e8f0",
+                  "primary": "#00478d",
+                  "on-secondary-fixed": "#171c1f",
+                  "tertiary-fixed-dim": "#ffb691",
+                  "outline-variant": "#c2c6d4",
+                  "tertiary-container": "#9f4300",
+                  "on-error-container": "#93000a",
+                  "surface-variant": "#e1e2ea",
+                  "secondary": "#5a5f62",
+                  "surface-container-low": "#f2f3fb",
+                  "on-surface": "#191c21",
+                  "inverse-on-surface": "#eff0f8",
+                  "surface-dim": "#d8dae2",
+                  "on-tertiary-fixed": "#341100",
+                  "surface-container": "#ecedf6",
+                  "secondary-fixed": "#dfe3e7",
+                  "tertiary-fixed": "#ffdbcb",
+                  "surface-container-highest": "#e1e2ea"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.125rem",
+                  "lg": "0.25rem",
+                  "xl": "0.5rem",
+                  "full": "0.75rem"
+          },
+          "spacing": {
+                  "margin": "32px",
+                  "unit": "4px",
+                  "sm": "8px",
+                  "md": "16px",
+                  "xs": "4px",
+                  "xl": "40px",
+                  "gutter": "24px",
+                  "lg": "24px"
+          },
+          "fontFamily": {
+                  "body-md": ["Public Sans"],
+                  "body-sm": ["Public Sans"],
+                  "h3": ["Public Sans"],
+                  "h1": ["Public Sans"],
+                  "h2": ["Public Sans"],
+                  "data-mono": ["Inter"],
+                  "body-lg": ["Public Sans"],
+                  "label-caps": ["Public Sans"]
+          },
+          "fontSize": {
+                  "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                  "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                  "h3": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                  "h1": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                  "h2": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                  "data-mono": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                  "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                  "label-caps": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "700"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .scan-line {
+      height: 4px;
+      background: linear-gradient(to bottom, transparent, #005db6, transparent);
+      box-shadow: 0 0 15px #005db6;
+      animation: scan 3s infinite ease-in-out;
+      position: absolute;
+      width: 100%;
+      z-index: 10;
+    }
+    @keyframes scan {
+      0% { top: 0%; opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { top: 100%; opacity: 0; }
+    }
+    .progress-fill {
+      width: 65%;
+      transition: width 0.5s ease-out;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col">
+<!-- TopAppBar Component -->
+<header class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 shadow-sm docked full-width top-0 z-40">
+<div class="flex justify-between items-center w-full px-4 h-16 max-w-7xl mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-blue-700 dark:text-blue-400" data-icon="medical_services">medical_services</span>
+<h1 class="text-blue-700 dark:text-blue-400 font-bold tracking-tight text-xl font-public-sans">MedTriage AI</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex gap-6">
+<span class="text-blue-700 dark:text-blue-400 font-public-sans font-semibold text-lg tracking-tight cursor-pointer">Analysis</span>
+<span class="text-slate-500 dark:text-slate-400 font-public-sans font-semibold text-lg tracking-tight hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-200 cursor-pointer px-2 rounded">Records</span>
+</div>
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 p-2 rounded-full hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-grow flex flex-col items-center justify-center px-gutter py-xl">
+<div class="max-w-4xl w-full grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
+<!-- Asymmetric Bento-style Layout -->
+<!-- Left Column: The Analysis Focus -->
+<div class="md:col-span-7 flex flex-col gap-md">
+<!-- Main Image Container -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm relative group">
+<div class="scan-line"></div>
+<div class="absolute inset-0 bg-primary/5 pointer-events-none"></div>
+<img class="w-full h-[450px] object-cover filter saturate-[0.8] contrast-[1.1]" data-alt="A professional medical dermatoscope photograph of a skin lesion on a patient's arm, captured in a clinical setting with bright neutral lighting. The image is framed within a high-tech UI overlay featuring glowing blue scanning lines and digital analysis markers. The aesthetic is clinical, clean, and highly sophisticated, using the Medical Blue palette to evoke trust and precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCITUBbNvlP22U_vEli8QcTsurkRduf1KHZ9cO_emZ4dqb6DwobKHuZ7Y3JhZh7oax4nPq3IzE8Brt2uSQ6TsMx3bnWVMmZP8icizUCw5nc8hPaNECRMoGrlEOS94IGDDO5rkxwEQZ1GZx5gKms1RI_cgpSDoSvj9DKYPIuEsrJ_DebAho3XttFwbaPoE2aNih6FXfdT9NlD8-lFGDUt6p3k7RCk2UrLcvDeaHLebO8cL9AYFNc6yhz3agKaBNpcAmjkDlDIvLcUr4"/>
+<!-- Clinical Overlay Markers -->
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-primary/80 text-on-primary px-3 py-1 rounded-full text-label-caps backdrop-blur-sm">ENHANCED_MODE</span>
+<span class="bg-black/50 text-white px-3 py-1 rounded-full text-label-caps backdrop-blur-sm">PATIENT_ID: 882-X</span>
+</div>
+<div class="absolute bottom-4 right-4 text-white/70 text-[10px] font-data-mono">
+            COORD: 34.55 N, 12.01 E
+          </div>
+</div>
+<!-- Progress Details Card -->
+<div class="bg-white border border-outline-variant rounded-xl p-md shadow-sm">
+<div class="flex justify-between items-center mb-sm">
+<h2 class="font-h2 text-h2 text-on-surface">Analyzing Image...</h2>
+<span class="font-data-mono text-primary text-sm font-bold">65%</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden mb-md">
+<div class="bg-primary h-full progress-fill"></div>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-body-sm font-body-sm">Image quality verified (4K resolution)</span>
+</div>
+<div class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="sync" data-weight="fill">sync</span>
+<span class="text-body-sm font-body-sm">Running Triage Models (Neural Engine V4)</span>
+</div>
+<div class="flex items-center gap-3 text-on-surface-variant opacity-50">
+<span class="material-symbols-outlined text-lg" data-icon="pending">pending</span>
+<span class="text-body-sm font-body-sm">Finalizing diagnostic report...</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Context & Stats -->
+<div class="md:col-span-5 flex flex-col gap-md">
+<!-- Model Info Card -->
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-md">
+<div class="flex items-center gap-3 mb-md">
+<div class="p-2 bg-primary/10 rounded-lg text-primary">
+<span class="material-symbols-outlined" data-icon="neurology">neurology</span>
+</div>
+<div>
+<p class="text-label-caps text-on-surface-variant">ACTIVE PROTOCOL</p>
+<p class="font-h3 text-on-surface">Dermatology AI-12</p>
+</div>
+</div>
+<p class="text-body-sm text-on-surface-variant leading-relaxed">
+            Utilizing convolutional neural networks trained on over 2.5 million clinical dermatoscopy images to identify high-risk markers and prioritize patient care.
+          </p>
+</div>
+<!-- Real-time Telemetry Bento Card -->
+<div class="bg-white border-l-4 border-primary border-y border-r border-outline-variant rounded-xl p-md shadow-sm">
+<p class="text-label-caps text-on-surface-variant mb-sm">AI TELEMETRY</p>
+<div class="grid grid-cols-2 gap-sm">
+<div class="bg-surface-container p-sm rounded-lg">
+<p class="text-[10px] text-on-surface-variant font-bold uppercase tracking-widest">Latency</p>
+<p class="font-data-mono text-body-lg text-primary">124ms</p>
+</div>
+<div class="bg-surface-container p-sm rounded-lg">
+<p class="text-[10px] text-on-surface-variant font-bold uppercase tracking-widest">Confidence</p>
+<p class="font-data-mono text-body-lg text-primary">0.982</p>
+</div>
+<div class="bg-surface-container p-sm rounded-lg col-span-2">
+<p class="text-[10px] text-on-surface-variant font-bold uppercase tracking-widest">Processing Nodes</p>
+<p class="font-data-mono text-body-sm text-on-surface">GPU_CLUSTER_US_EAST_01</p>
+</div>
+</div>
+</div>
+<!-- Privacy & Security Anchor -->
+<div class="mt-auto pt-md flex items-center gap-2 text-on-surface-variant/70">
+<span class="material-symbols-outlined text-sm" data-icon="lock">lock</span>
+<p class="text-[12px] font-medium italic">HIPAA Compliant • End-to-End Encrypted Analysis</p>
+</div>
+</div>
+</div>
+</main>
+<!-- FAB - Contextual Suppression (Hidden on Analysis Screen per rules) -->
+<!-- BottomNavBar Component - Responsive Pivot -->
+<nav class="md:hidden fixed bottom-0 w-full flex justify-around items-center px-4 py-3 pb-safe bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 shadow-[0_-4px_12px_rgba(0,0,0,0.05)] z-50">
+<div class="flex flex-col items-center justify-center text-blue-700 dark:text-blue-400 bg-blue-50/50 dark:bg-blue-900/20 rounded-xl px-3 py-1 transition-transform active:scale-95">
+<span class="material-symbols-outlined" data-icon="add_a_photo" style="font-variation-settings: 'FILL' 1;">add_a_photo</span>
+<span class="font-public-sans text-[11px] font-medium">Upload</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-3 py-1 hover:text-blue-600 dark:hover:text-blue-300 transition-transform active:scale-95">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-public-sans text-[11px] font-medium">History</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-3 py-1 hover:text-blue-600 dark:hover:text-blue-300 transition-transform active:scale-95">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-public-sans text-[11px] font-medium">Settings</span>
+</div>
+</nav>
+</body></html>

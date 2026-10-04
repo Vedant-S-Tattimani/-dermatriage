@@ -1,0 +1,7 @@
+{
+    "optimal_temperature": 0.8,
+    "raw_ece": 0.2241,
+    "calibrated_ece": 0.0821,
+    "improvement_pct": 63.3,
+    "overconfident_samples": 0
+}

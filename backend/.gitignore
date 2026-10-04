@@ -1,0 +1,49 @@
+# ── Secrets ───────────────────────────────────────────────────────────────────
+.env
+*.pem
+*.key
+
+# ── Model weights (large binary files) ───────────────────────────────────────
+weights/*.pth
+weights/*.pt
+weights/*.ckpt
+weights/*.bin
+!weights/.gitkeep
+
+# ── Dataset (very large) ──────────────────────────────────────────────────────
+data/raw/
+data/processed/
+!data/.gitkeep
+
+# ── User uploads ─────────────────────────────────────────────────────────────
+uploads/
+!uploads/.gitkeep
+
+# ── Python ───────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+.venv/
+venv/
+env/
+.Python
+
+# ── Jupyter ──────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+
+# ── Testing ───────────────────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ── IDEs ─────────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo

@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  # ── API Backend (GPU Accelerated) ──────────────────────────────────────────
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: skin-triage-backend:v1.1
+    environment:
+      - ENV=production
+      - GROQ_API_KEY=${GROQ_API_KEY}
+    volumes:
+      - ./backend/weights:/app/weights
+      - ./backend/uploads:/app/uploads
+      - ./backend/data/active_learning:/app/data/active_learning
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    restart: always
+
+  # ── SPA Frontend (Optimized Nginx) ──────────────────────────────────────────
+  frontend:
+    build:
+      context: ./frontend/triage-app
+      dockerfile: Dockerfile
+    image: skin-triage-frontend:v1.1
+    restart: always
+
+  # ── Main Reverse Proxy (HTTPS / Gateway) ───────────────────────────────────
+  gateway:
+    image: nginx:stable-alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/production.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./nginx/certs:/etc/nginx/certs:ro
+    depends_on:
+      - backend
+      - frontend
+    restart: always
+
+volumes:
+  weights:
+  uploads:
+  active_learning:

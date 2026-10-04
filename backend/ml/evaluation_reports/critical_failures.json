@@ -1,0 +1,188 @@
+[
+    {
+        "index": 41,
+        "actual": "bcc",
+        "predicted": "df",
+        "confidence": 0.5907166600227356
+    },
+    {
+        "index": 54,
+        "actual": "bcc",
+        "predicted": "bkl",
+        "confidence": 0.28260552883148193
+    },
+    {
+        "index": 206,
+        "actual": "melanoma",
+        "predicted": "df",
+        "confidence": 0.889945924282074
+    },
+    {
+        "index": 207,
+        "actual": "melanoma",
+        "predicted": "df",
+        "confidence": 0.42470312118530273
+    },
+    {
+        "index": 209,
+        "actual": "melanoma",
+        "predicted": "bkl",
+        "confidence": 0.666439414024353
+    },
+    {
+        "index": 210,
+        "actual": "melanoma",
+        "predicted": "bkl",
+        "confidence": 0.4772624969482422
+    },
+    {
+        "index": 211,
+        "actual": "melanoma",
+        "predicted": "bkl",
+        "confidence": 0.45006051659584045
+    },
+    {
+        "index": 216,
+        "actual": "melanoma",
+        "predicted": "bkl",
+        "confidence": 0.594761848449707
+    },
+    {
+        "index": 220,
+        "actual": "melanoma",
+        "predicted": "bkl",
+        "confidence": 0.8358461260795593
+    },
+    {
+        "index": 221,
+        "actual": "melanoma",
+        "predicted": "nevus",
+        "confidence": 0.43453097343444824
+    },
+    {
+        "index": 225,
+        "actual": "melanoma",
+        "predicted": "bkl",
+        "confidence": 0.7881433963775635
+    },
+    {
+        "index": 226,
+        "actual": "melanoma",
+        "predicted": "bkl",
+        "confidence": 0.5908529758453369
+    },
+    {
+        "index": 227,
+        "actual": "melanoma",
+        "predicted": "bkl",
+        "confidence": 0.6838697195053101
+    },
+    {
+        "index": 238,
+        "actual": "melanoma",
+        "predicted": "bkl",
+        "confidence": 0.48156946897506714
+    },
+    {
+        "index": 239,
+        "actual": "melanoma",
+        "predicted": "nevus",
+        "confidence": 0.7307536602020264
+    },
+    {
+        "index": 242,
+        "actual": "melanoma",
+        "predicted": "bkl",
+        "confidence": 0.5434544682502747
+    },
+    {
+        "index": 246,
+        "actual": "melanoma",
+        "predicted": "bkl",
+        "confidence": 0.45401543378829956
+    },
+    {
+        "index": 247,
+        "actual": "melanoma",
+        "predicted": "nevus",
+        "confidence": 0.5006642937660217
+    },
+    {
+        "index": 259,
+        "actual": "melanoma",
+        "predicted": "nevus",
+        "confidence": 0.5278788208961487
+    },
+    {
+        "index": 260,
+        "actual": "melanoma",
+        "predicted": "bkl",
+        "confidence": 0.6348361968994141
+    },
+    {
+        "index": 264,
+        "actual": "melanoma",
+        "predicted": "df",
+        "confidence": 0.6625580191612244
+    },
+    {
+        "index": 266,
+        "actual": "melanoma",
+        "predicted": "bkl",
+        "confidence": 0.7913093566894531
+    },
+    {
+        "index": 272,
+        "actual": "melanoma",
+        "predicted": "bkl",
+        "confidence": 0.4663386046886444
+    },
+    {
+        "index": 276,
+        "actual": "melanoma",
+        "predicted": "vascular",
+        "confidence": 0.6931421160697937
+    },
+    {
+        "index": 285,
+        "actual": "melanoma",
+        "predicted": "bkl",
+        "confidence": 0.5740894079208374
+    },
+    {
+        "index": 286,
+        "actual": "melanoma",
+        "predicted": "bkl",
+        "confidence": 0.40309473872184753
+    },
+    {
+        "index": 291,
+        "actual": "melanoma",
+        "predicted": "bkl",
+        "confidence": 0.5283914804458618
+    },
+    {
+        "index": 293,
+        "actual": "melanoma",
+        "predicted": "bkl",
+        "confidence": 0.4929965138435364
+    },
+    {
+        "index": 294,
+        "actual": "melanoma",
+        "predicted": "bkl",
+        "confidence": 0.5025812983512878
+    },
+    {
+        "index": 296,
+        "actual": "melanoma",
+        "predicted": "bkl",
+        "confidence": 0.48976919054985046
+    },
+    {
+        "index": 297,
+        "actual": "melanoma",
+        "predicted": "vascular",
+        "confidence": 0.47079741954803467
+    }
+]

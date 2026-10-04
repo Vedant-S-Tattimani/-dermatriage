@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Actinic Keratosis / Bowen's Disease (AKIEC)",
+    "tags": ["actinic", "akiec"],
+    "summary": "Actinic keratosis (AK) and intraepithelial carcinoma (Bowen's disease) are precancerous skin lesions caused by cumulative ultraviolet radiation exposure. They present as rough, scaly, or crusty patches on sun-exposed areas. A small percentage can progress to invasive squamous cell carcinoma (SCC). Standard treatments include photodynamic therapy, cryotherapy, or topical agents (e.g., 5-fluorouracil, imiquimod)."
+  },
+  {
+    "title": "Basal Cell Carcinoma (BCC)",
+    "tags": ["bcc", "basal cell carcinoma"],
+    "summary": "Basal Cell Carcinoma is the most common form of skin cancer, arising from the basal layer of the epidermis. It typically presents as a pearly or waxy bump, often with visible blood vessels (telangiectasia), or a flat, flesh-colored or brown scar-like lesion. It is locally invasive but rarely metastasizes. Recommended management includes surgical excision, Mohs micrographic surgery, or topical treatments for superficial variants."
+  },
+  {
+    "title": "Benign Keratosis-like Lesions (BKL)",
+    "tags": ["bkl", "benign keratosis", "seborrheic keratosis", "lichen planus-like keratosis"],
+    "summary": "Benign keratosis-like lesions include seborrheic keratoses, solar lentigines, and lichen planus-like keratoses (LPLK). They are common, non-cancerous skin growths that typically appear waxy, scaly, or 'stuck-on' the skin. No treatment is medically necessary except for cosmetic reasons or if symptomatic (irritated or bleeding)."
+  },
+  {
+    "title": "Dermatofibroma (DF)",
+    "tags": ["df", "dermatofibroma"],
+    "summary": "Dermatofibroma is a common, benign, firm dermal nodule, most frequently found on the lower extremities. It often exhibits the 'dimple sign' (pinching the lesion causes it to dimple inward). It is harmless and requires no treatment unless it causes discomfort, changes in appearance, or is repeatedly traumatized."
+  },
+  {
+    "title": "Melanoma",
+    "tags": ["melanoma", "mel"],
+    "summary": "Melanoma is a highly malignant skin cancer arising from melanocytes, the pigment-producing cells. It is the most aggressive form of skin cancer and has a high potential for metastasis if not detected and excised early. Warning signs include asymmetry, irregular borders, color variation, diameter >6mm, and evolution (ABCDE criteria). Prompt surgical excision with clear margins is the primary treatment."
+  },
+  {
+    "title": "Melanocytic Nevus (Nevus)",
+    "tags": ["nevus", "nv", "mole"],
+    "summary": "A melanocytic nevus, commonly known as a mole, is a benign proliferation of melanocytes. They are typically symmetric, uniform in color (tan, brown, or black), and have well-defined borders. While benign, certain atypical or dysplastic nevi can resemble melanoma or indicate a higher risk of developing melanoma, warranting monitoring."
+  },
+  {
+    "title": "Vascular Lesions",
+    "tags": ["vascular", "vasc", "cherry angioma", "angioma", "hemangioma"],
+    "summary": "Vascular lesions comprise benign vascular proliferations and malformations, including cherry angiomas, angiokeratomas, pyogenic granulomas, and hemangiomas. They range from red, purple, to blue in color and are composed of clusters of capillaries. They are generally benign, though pyogenic granulomas can bleed easily and may require excision."
+  }
+]

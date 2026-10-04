@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;family=Inter:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "tertiary": "#793100",
+                  "inverse-primary": "#a9c7ff",
+                  "error-container": "#ffdad6",
+                  "secondary-container": "#dce0e4",
+                  "primary-fixed-dim": "#a9c7ff",
+                  "surface-tint": "#005db6",
+                  "on-surface-variant": "#424752",
+                  "on-primary": "#ffffff",
+                  "surface": "#f9f9ff",
+                  "outline": "#727783",
+                  "on-primary-fixed": "#001b3d",
+                  "on-error": "#ffffff",
+                  "on-primary-container": "#c8daff",
+                  "background": "#f9f9ff",
+                  "on-primary-fixed-variant": "#00468c",
+                  "primary-container": "#005eb8",
+                  "on-tertiary-fixed-variant": "#793100",
+                  "on-tertiary": "#ffffff",
+                  "on-secondary": "#ffffff",
+                  "on-secondary-fixed-variant": "#43474b",
+                  "secondary-fixed-dim": "#c3c7cb",
+                  "inverse-surface": "#2e3037",
+                  "on-background": "#191c21",
+                  "error": "#ba1a1a",
+                  "on-tertiary-container": "#ffcfb9",
+                  "on-secondary-container": "#5e6367",
+                  "surface-bright": "#f9f9ff",
+                  "surface-container-lowest": "#ffffff",
+                  "primary-fixed": "#d6e3ff",
+                  "surface-container-high": "#e7e8f0",
+                  "primary": "#00478d",
+                  "on-secondary-fixed": "#171c1f",
+                  "tertiary-fixed-dim": "#ffb691",
+                  "outline-variant": "#c2c6d4",
+                  "tertiary-container": "#9f4300",
+                  "on-error-container": "#93000a",
+                  "surface-variant": "#e1e2ea",
+                  "secondary": "#5a5f62",
+                  "surface-container-low": "#f2f3fb",
+                  "on-surface": "#191c21",
+                  "inverse-on-surface": "#eff0f8",
+                  "surface-dim": "#d8dae2",
+                  "on-tertiary-fixed": "#341100",
+                  "surface-container": "#ecedf6",
+                  "secondary-fixed": "#dfe3e7",
+                  "tertiary-fixed": "#ffdbcb",
+                  "surface-container-highest": "#e1e2ea"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.125rem",
+                  "lg": "0.25rem",
+                  "xl": "0.5rem",
+                  "full": "0.75rem"
+          },
+          "spacing": {
+                  "margin": "32px",
+                  "unit": "4px",
+                  "sm": "8px",
+                  "md": "16px",
+                  "xs": "4px",
+                  "xl": "40px",
+                  "gutter": "24px",
+                  "lg": "24px"
+          },
+          "fontFamily": {
+                  "body-md": ["Public Sans"],
+                  "body-sm": ["Public Sans"],
+                  "h3": ["Public Sans"],
+                  "h1": ["Public Sans"],
+                  "h2": ["Public Sans"],
+                  "data-mono": ["Inter"],
+                  "body-lg": ["Public Sans"],
+                  "label-caps": ["Public Sans"]
+          },
+          "fontSize": {
+                  "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                  "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                  "h3": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                  "h1": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                  "h2": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                  "data-mono": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                  "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                  "label-caps": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "700"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body-md text-on-surface min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 shadow-sm docked full-width top-0 z-50">
+<div class="flex justify-between items-center w-full px-4 h-16 max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-blue-700 dark:text-blue-400" data-icon="medical_services">medical_services</span>
+<h1 class="font-public-sans font-semibold text-lg tracking-tight text-blue-700 dark:text-blue-400">MedTriage AI</h1>
+</div>
+<div class="hidden md:flex gap-6 items-center">
+<button class="text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-200 px-3 py-2 rounded-lg font-public-sans font-semibold text-sm">Upload</button>
+<button class="text-blue-700 dark:text-blue-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-200 px-3 py-2 rounded-lg font-public-sans font-semibold text-sm">History</button>
+<button class="text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-200 px-3 py-2 rounded-lg font-public-sans font-semibold text-sm">Settings</button>
+</div>
+<div class="md:hidden">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-4 mt-8">
+<!-- Header Section -->
+<div class="mb-8">
+<h2 class="font-h1 text-h1 text-on-surface mb-2">History Log</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Review and manage past diagnostic triage results.</p>
+</div>
+<!-- Search & Filter Bar -->
+<div class="bg-white p-md border border-outline-variant shadow-sm rounded-xl mb-gutter flex flex-col md:flex-row gap-4 items-center">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="search">search</span>
+<input class="w-full pl-11 pr-4 py-3 rounded-lg border border-outline-variant focus:ring-2 focus:ring-primary focus:border-primary transition-all text-body-md font-body-md bg-surface-container-lowest" placeholder="Search by diagnosis or patient ID..." type="text"/>
+</div>
+<div class="flex gap-2 w-full md:w-auto">
+<button class="flex items-center gap-2 px-4 py-3 bg-surface-container border border-outline-variant rounded-lg hover:bg-surface-container-high transition-colors whitespace-nowrap">
+<span class="material-symbols-outlined text-body-md" data-icon="calendar_today">calendar_today</span>
+<span class="font-label-caps text-label-caps">Date Range</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-3 bg-surface-container border border-outline-variant rounded-lg hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-body-md" data-icon="filter_list">filter_list</span>
+</button>
+</div>
+</div>
+<!-- History Log List -->
+<div class="space-y-4">
+<!-- Card Item: High Risk -->
+<div class="bg-white border border-outline-variant rounded-xl overflow-hidden shadow-sm flex items-stretch group hover:shadow-md transition-shadow">
+<div class="w-1.5 bg-error"></div>
+<div class="p-4 flex flex-col md:flex-row md:items-center gap-4 w-full">
+<div class="w-20 h-20 rounded-lg overflow-hidden bg-surface-container shrink-0 border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A high-resolution clinical photograph of a skin lesion under polarized light for dermatological analysis. The lighting is sterile and medical, with a cool-toned hospital aesthetic that emphasizes detail and diagnostic clarity. The image is captured with a macro lens, focusing on the texture of the epidermis in a minimalist clinical setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFmolkxxelOSefMBBT0l_5OvPpvwgvgg_dtTM8r_-JOzZN5TzZ3wBO-Ngi-yEc6XKAneTWu3EL5P0v3Mxk-qO0GwHBCN7N0bRsgRlpSwAAxA0-N6nDlC85MIuPMB8EJn0Phu1lLaxQKnXYGqLIYRGmcfKAQjbzisGXU9s4povFI5Ba-MTJ2JN1Wg74ZWuJKrlM_9RB73XrJ3jpQI3741BhD_RAE1Zuc5y_frr3pdlLoIM0MRT7KOHtp2Gu85x9p25KDmzoZFN66yA"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<span class="font-data-mono text-data-mono text-on-surface-variant">ID: #PX-8921-A</span>
+<span class="px-2 py-0.5 rounded bg-error-container text-on-error-container font-label-caps text-[10px] uppercase tracking-wider">High Risk</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface mb-1">Malignant Melanoma (Probable)</h3>
+<div class="flex items-center gap-3 text-on-surface-variant">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="event">event</span>
+<span class="font-body-sm text-body-sm">Oct 24, 2023</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="schedule">schedule</span>
+<span class="font-body-sm text-body-sm">14:32 PM</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 md:border-l border-outline-variant md:pl-6">
+<button class="p-2 text-primary hover:bg-primary-fixed rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card Item: Medium Risk -->
+<div class="bg-white border border-outline-variant rounded-xl overflow-hidden shadow-sm flex items-stretch group hover:shadow-md transition-shadow">
+<div class="w-1.5 bg-tertiary"></div>
+<div class="p-4 flex flex-col md:flex-row md:items-center gap-4 w-full">
+<div class="w-20 h-20 rounded-lg overflow-hidden bg-surface-container shrink-0 border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A clean, medical-grade radiograph showing a frontal view of a patient's chest. The lighting is optimized for diagnostic viewing on a high-resolution lightbox, showing deep blacks and luminous whites with professional anatomical precision. The style is clinical, minimalist, and focused on clarity for radiological triage." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtlIqeuBsm2ASzEoxnyQgXbFFkrbhNsuBjBH-gaOuEm_cIR-MNi3NnkLNOxFtB6oAed1x8Ig0_zqfvgV2CYYhc5qPoo-XQ8nEqErLQUqu0ONK8utTg-TlEy7T2ohBptE-Ef_2dpm0XekO2BI5JJ-VWTxKD_zdY21ZrP3TheAOwYajEdcCVJeth5nsLEyz342L3Eowjm67-po0vqauoYQ53O45xzFiQ8vCl6g1jLrgak66AGOXYCTeGBkmF4QrwHObEEDtTPbY1E70"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<span class="font-data-mono text-data-mono text-on-surface-variant">ID: #PX-4412-B</span>
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-caps text-[10px] uppercase tracking-wider">Moderate Risk</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface mb-1">Atypical Pulmonary Shadow</h3>
+<div class="flex items-center gap-3 text-on-surface-variant">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="event">event</span>
+<span class="font-body-sm text-body-sm">Oct 23, 2023</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="schedule">schedule</span>
+<span class="font-body-sm text-body-sm">09:15 AM</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 md:border-l border-outline-variant md:pl-6">
+<button class="p-2 text-primary hover:bg-primary-fixed rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card Item: Low Risk -->
+<div class="bg-white border border-outline-variant rounded-xl overflow-hidden shadow-sm flex items-stretch group hover:shadow-md transition-shadow">
+<div class="w-1.5 bg-secondary"></div>
+<div class="p-4 flex flex-col md:flex-row md:items-center gap-4 w-full">
+<div class="w-20 h-20 rounded-lg overflow-hidden bg-surface-container shrink-0 border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A focused close-up of a digital medical record on a tablet screen, showing clear data points and diagnostic graphs. The environment is a brightly lit, modern doctor's office with soft daylight and clean white surfaces. The aesthetic is high-end corporate medical, emphasizing trust, accuracy, and professional technology." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChXCccuAke-DQjSmxibaTUhQMjRtNZj09mSKidQMhIbZUlet8nkrKHDCYALZRZffLuKfdCd2z-uTNtNjt9ym_3xw6Tb20n-onaHyAWqQKx5hJyrk-UexJ7GbjlB1vnTpV8zXlwfVHcRZVqG9OrG8RUGQG2y0d3Lb7p_BuoBySL0aGZCHrvGKbcQfVBHZN8EhBNRS5EAZRO8m4SDqX1QIsU0I-p-RS8Yj2LAWuvxLPHYU4r5754qNqyhhEZZ_H7MNAs-Y6PW_0WXKI"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<span class="font-data-mono text-data-mono text-on-surface-variant">ID: #PX-7729-C</span>
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-caps text-[10px] uppercase tracking-wider">Low Risk</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface mb-1">Benign Seborrheic Keratosis</h3>
+<div class="flex items-center gap-3 text-on-surface-variant">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="event">event</span>
+<span class="font-body-sm text-body-sm">Oct 21, 2023</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="schedule">schedule</span>
+<span class="font-body-sm text-body-sm">16:45 PM</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 md:border-l border-outline-variant md:pl-6">
+<button class="p-2 text-primary hover:bg-primary-fixed rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full flex justify-around items-center px-4 py-3 pb-safe bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 shadow-[0_-4px_12px_rgba(0,0,0,0.05)] z-50 md:hidden">
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-3 py-1 hover:text-blue-600 dark:hover:text-blue-300 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="add_a_photo">add_a_photo</span>
+<span class="font-public-sans text-[11px] font-medium">Upload</span>
+</a>
+<a class="flex flex-col items-center justify-center text-blue-700 dark:text-blue-400 bg-blue-50/50 dark:bg-blue-900/20 rounded-xl px-3 py-1 hover:text-blue-600 dark:hover:text-blue-300 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="history" style="font-variation-settings: 'FILL' 1;">history</span>
+<span class="font-public-sans text-[11px] font-medium">History</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-3 py-1 hover:text-blue-600 dark:hover:text-blue-300 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-public-sans text-[11px] font-medium">Settings</span>
+</a>
+</nav>
+</body></html>

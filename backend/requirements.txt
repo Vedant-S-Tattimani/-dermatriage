@@ -1,0 +1,34 @@
+fastapi>=0.111.0
+uvicorn[standard]>=0.29.0
+pydantic>=2.7.0
+pydantic-settings>=2.2.1
+
+# ML / Vision
+torch>=2.3.0
+torchvision>=0.18.0
+Pillow>=10.3.0
+opencv-python-headless>=4.9.0
+numpy>=1.26.4
+
+# LLM
+groq>=0.9.0
+
+# File handling
+aiofiles>=23.2.1
+python-multipart>=0.0.9
+
+# Data / ML tooling
+scikit-learn>=1.4.2
+pandas>=2.2.2
+
+# Testing
+pytest>=8.2.0
+pytest-asyncio>=0.23.7
+httpx>=0.27.0
+
+# Optional: visualisation (for evaluate.py)
+matplotlib>=3.9.0
+seaborn>=0.13.2
+
+# Kaggle dataset download (kagglehub replaces legacy kaggle CLI)
+kagglehub[pandas-datasets]>=0.3.0
